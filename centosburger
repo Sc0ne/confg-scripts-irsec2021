@@ -1,0 +1,14 @@
+apt-get --reinstall install ftp          #ftp
+
+ufw reset
+ufw default deny incoming
+ufw default deny outgoing
+ufw allow ftp
+ufw allow 21/tcp
+
+mkdir /var/freshbackups
+cp -R /home/ /var/backups   #makes a copy of home directory
+
+grep -Po '^sudo.+:\K.*$' /etc/group  #list superusers
+
+echo "It is a great day to use telnet! config file is in /etc/vsftpd.conf, logs are in /var/log/messages"
