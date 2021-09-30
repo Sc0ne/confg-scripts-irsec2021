@@ -1,0 +1,16 @@
+sudo apt-get --reinstall install postfix                  #Postfix
+
+ufw reset
+ufw default deny incoming
+ufw default deny outgoing
+ufw allow postfix
+ufw allow ssh
+ufw allow 22/tcp
+ufw allow 25/tcp
+
+mkdir /var/freshbackups
+cp -R /home/ /var/backups   #makes a copy of home directory
+
+grep -Po '^sudo.+:\K.*$' /etc/group  #list superusers
+
+echo "It is a great day to use telnet! Config files are in /etc/postfix, logs are in /var/log/mail"
