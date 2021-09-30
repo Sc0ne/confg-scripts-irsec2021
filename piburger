@@ -14,4 +14,4 @@ cp -R /home/ /var/backups   #makes a copy of home directory
 
 grep -Po '^sudo.+:\K.*$' /etc/group  #list superusers
 
-echo "It is a great day to use telnet!"
+echo "It is a great day to use telnet! Config files are in /etc/ssh/sshd_config, logs are in /var/log/auth"
