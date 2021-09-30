@@ -4,7 +4,9 @@ ufw reset
 ufw default deny incoming
 ufw default deny outgoing
 ufw allow ftp
+ufw allow ssh
 ufw allow 21/tcp
+ufw allow 22/tcp
 
 mkdir /var/freshbackups
 cp -R /home/ /var/backups   #makes a copy of home directory
